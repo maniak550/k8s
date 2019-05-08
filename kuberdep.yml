@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask_web
+  template:
+    metadata:
+      labels:
+        app: flask_web
+    spec:
+      containers:
+      - name: dupa1
+        image: myk8clusterreg001.azurecr.io/superduper:v0.0.1
+        ports:
+        - containerPort: 4000
+      imagePullSecrets:
+        - name: dupa1-auth
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myapp
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 4000
+  selector:
+    app: flask_web
