@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dupa1
-        image: demomg123.azurecr.io/myapp:latest
+        image: myk8clusterreg001.azurecr.io/superduper:v0.0.1
         ports:
         - containerPort: 4000
       imagePullSecrets:
