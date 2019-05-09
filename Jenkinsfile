@@ -3,7 +3,7 @@
   def appName = 'superduper'
   def imageName = "${acr}/${appName}"
   def imageTag = "${imageName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def appRepo = "myk8clusterreg001.azurecr.io/superduper:v0.0.1
+  def appRepo = "myk8clusterreg001.azurecr.io/superduper:v0.0.1"
 
   checkout scm
   
