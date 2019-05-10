@@ -43,8 +43,8 @@
         withCredentials([usernamePassword(credentialsId: 'dupa1_auth', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh "kubectl -n ${appName}-${env.BRANCH_NAME} get secret dupa1-auth || kubectl --namespace=${appName}-${env.BRANCH_NAME} create secret docker-registry acr-auth --docker-server ${acr} --docker-username $USERNAME --docker-password $PASSWORD"
         }  
-        sh("sed -i.bak 's#${appRepo}#${imageTag}#' ./k8s/dev/*.yml")
-        sh("kubectl --namespace=${appName}-${env.BRANCH_NAME} apply -f k8s/dev/")
+        sh("sed -i.bak 's#${appRepo}#${imageTag}#' ./dev/*.yml")
+        sh("kubectl --namespace=${appName}-${env.BRANCH_NAME} apply -f /dev/")
         echo 'To access your environment run `kubectl proxy`'
         echo "Then access your service via http://localhost:8001/api/v1/namespaces/${appName}-${env.BRANCH_NAME}/services/${appName}:80/proxy/"     
     }
