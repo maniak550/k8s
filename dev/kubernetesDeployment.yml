@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: superduper
+  name: superduper-dev
 spec:
   replicas: 2
   selector:
@@ -12,7 +12,7 @@ spec:
       name: superduper
       labels:
         app: superduper
-        env: prod
+        env: dev
     spec:
       containers:
       - name: superduper
@@ -21,4 +21,17 @@ spec:
         - containerPort: 4000
       imagePullSecrets:
       - name: dupa1-auth
-
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: superduper
+  labels:
+    name: superduper
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 4000
+  selector:
+    app: superduper

@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: superduper
+  labels:
+    name: superduper
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 4000
+    protocol: TCP
+  selector:
+    app: superduper

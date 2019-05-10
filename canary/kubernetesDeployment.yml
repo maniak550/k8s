@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: superduper
+  name: superduper-canary
 spec:
   replicas: 2
   selector:
@@ -12,7 +12,7 @@ spec:
       name: superduper
       labels:
         app: superduper
-        env: prod
+        env: canary
     spec:
       containers:
       - name: superduper
