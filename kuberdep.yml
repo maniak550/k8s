@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-app
+  name: superduper
 spec:
   replicas: 1
   selector:
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: myapp
+  name: superduper
 spec:
   type: LoadBalancer
   ports:
