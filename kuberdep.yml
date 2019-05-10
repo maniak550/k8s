@@ -7,14 +7,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: flask_web
+      app: superduper
   template:
     metadata:
       labels:
         app: flask_web
     spec:
       containers:
-      - name: dupa1
+      - name: superduper
         image: myk8clusterreg001.azurecr.io/superduper:v0.0.1
         ports:
         - containerPort: 4000
@@ -31,4 +31,4 @@ spec:
   - port: 80
     targetPort: 4000
   selector:
-    app: flask_web
+    app: superduper
