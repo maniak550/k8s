@@ -14,6 +14,6 @@ COPY . /app
 
 ENTRYPOINT ["python"]
 
-//CMD ["test_app.py"]
+#CMD ["test_app.py"]
 
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
