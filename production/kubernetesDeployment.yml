@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -12,6 +11,7 @@ spec:
     metadata:
       labels:
         app: superduper
+        env: prod
     spec:
       containers:
       - name: dupa1
