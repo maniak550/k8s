@@ -1,9 +1,9 @@
  node {
-  def acr = 'myk8clusterreg001.azurecr.io'
+  def acr = 'basecamcontreg.azurecr.io'
   def appName = 'superduper'
   def imageName = "${acr}/${appName}"
   def imageTag = "${imageName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def appRepo = "myk8clusterreg001.azurecr.io/superduper:v0.0.1"
+  def appRepo = "basecamcontreg.azurecr.io/superduper:v0.0.1"
 
   checkout scm
   
