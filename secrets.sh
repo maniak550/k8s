@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ACR_NAME=myk8ClusterReg001
+ACR_NAME=basecampcontreg
 SERVICE_PRINCIPAL_NAME=myk8principal
 
 # Populate the ACR login server and resource id.
