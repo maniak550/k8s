@@ -15,8 +15,8 @@ spec:
         env: prod
     spec:
       containers:
-      - name: k8s_web
-        image: wtf123.azurecr.io/k8s_web:v1
+      - name: k8sweb
+        image: wtf123.azurecr.io/k8sweb:v1
         ports:
         - containerPort: 4000
       imagePullSecrets:
