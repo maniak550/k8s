@@ -1,16 +1,16 @@
  node {
   def acr = 'basecampcontreg.azurecr.io'
-  def appName = 'superduper'
+  def appName = 'k8s_web'
   def imageName = "${acr}/${appName}"
   def imageTag = "${imageName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def appRepo = "basecampcontreg.azurecr.io/superduper:v0.0.1"
+  def appRepo = "basecampcontreg.azurecr.io/k8s_web:v1"
 
   checkout scm
   
  stage('Build the Image and Push to Azure Container Registry') 
  {
    app = docker.build("${imageName}")
-   withDockerRegistry([credentialsId: 'dupa1_auth', url: "https://${acr}"]) {
+   withDockerRegistry([credentialsId: 'dupa1-auth', url: "https://${acr}"]) {
       app.push("${env.BRANCH_NAME}.${env.BUILD_NUMBER}")
                 }
   }
