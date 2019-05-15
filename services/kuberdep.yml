@@ -1,9 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: superduper
+  name: k8sweb
   labels:
-    name: superduper
+    name: k8sweb
 spec:
   type: LoadBalancer
   ports:
@@ -11,4 +11,4 @@ spec:
     targetPort: 4000
     protocol: TCP
   selector:
-    app: superduper
+    app: k8sweb
