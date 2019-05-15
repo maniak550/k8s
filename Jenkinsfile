@@ -1,5 +1,5 @@
  node {
-  def acr = 'basecampcontreg.azurecr.io'
+  def acr = 'wtf123.azurecr.io'
   def appName = 'k8s_web'
   def imageName = "${acr}/${appName}"
   def imageTag = "${imageName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
