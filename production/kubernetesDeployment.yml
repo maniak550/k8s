@@ -1,17 +1,17 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: k8s_web
+  name: k8sweb
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: k8s_web
+      app: k8sweb
   template:
     metadata:
-      name: k8s_web
+      name: k8sweb
       labels:
-        app: k8s_web
+        app: k8sweb
         env: prod
     spec:
       containers:
