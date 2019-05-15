@@ -1,9 +1,9 @@
  node {
-  def acr = 'basecamcontreg.azurecr.io'
+  def acr = 'basecampcontreg.azurecr.io'
   def appName = 'superduper'
   def imageName = "${acr}/${appName}"
   def imageTag = "${imageName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def appRepo = "basecamcontreg.azurecr.io/superduper:v0.0.1"
+  def appRepo = "basecampcontreg.azurecr.io/superduper:v0.0.1"
 
   checkout scm
   
