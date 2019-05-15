@@ -1,22 +1,22 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: superduper
+  name: k8s_web
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: superduper
+      app: k8s_web
   template:
     metadata:
-      name: superduper
+      name: k8s_web
       labels:
-        app: superduper
+        app: k8s_web
         env: prod
     spec:
       containers:
-      - name: superduper
-        image: myk8clusterreg001.azurecr.io/superduper:v0.0.1
+      - name: k8s_web
+        image: wtf123.azurecr.io/k8s_web:v1
         ports:
         - containerPort: 4000
       imagePullSecrets:
